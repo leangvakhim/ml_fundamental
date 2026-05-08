@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bias-Variance Trade-off Explained</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Ensuring smooth transitions for text content */
+        .fade-enter {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .fade-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 300ms, transform 300ms;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-800 font-sans antialiased min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-4xl w-full bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
+        <!-- Header -->
+        <div class="px-8 py-6 border-b border-slate-100 bg-slate-50 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold text-slate-900">The Bias-Variance Trade-off</h1>
+                <p class="text-slate-500 text-sm mt-1">Machine Learning Fundamentals visually explained</p>
+            </div>
+            <div class="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100"
+                id="step-counter">
+                Step 1 of 5
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="p-8">
+            <h2 id="step-title" class="text-xl font-semibold text-slate-800 mb-2 transition-all duration-300">1. The Raw
+                Data</h2>
+
+            <!-- Visualization Canvas -->
+            <div class="w-full bg-white rounded-xl border-2 border-slate-100 shadow-inner mb-6 relative overflow-hidden"
+                style="aspect-ratio: 2/1;">
+                <canvas id="viz-canvas" class="w-full h-full block"></canvas>
+            </div>
+
+            <!-- Description -->
+            <div class="min-h-[100px]">
+                <p id="step-description" class="text-slate-600 leading-relaxed text-lg transition-all duration-300">
+                    Imagine we are trying to predict a target variable based on a single feature. Here is our training
+                    data. In the real world, data usually has an underlying pattern, but it's also messy and contains
+                    random noise. Our goal is to find a model that captures the true pattern without being fooled by the
+                    noise.
+                </p>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="px-8 py-4 bg-slate-50 border-t border-slate-100 flex justify-between items-center rounded-b-2xl">
+            <button id="btn-prev"
+                class="px-5 py-2.5 rounded-lg font-medium text-slate-600 bg-white border border-slate-200 shadow-sm hover:bg-slate-50 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                &larr; Back
+            </button>
+
+            <div class="flex space-x-2" id="dots-container">
+                <!-- Dots injected by JS -->
+            </div>
+
+            <button id="btn-next"
+                class="px-5 py-2.5 rounded-lg font-medium text-white bg-blue-600 hover:bg-blue-700 shadow-sm shadow-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                Next Step &rarr;
+            </button>
+        </div>
+    </div>
+
+    <script src="../js/bias_variance_trade_off.js"></script>
+</body>
+
+</html>

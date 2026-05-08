@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Pipeline Visualization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Simple fade-in animation for step transitions */
+        .fade-in {
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-slate-50 min-h-screen flex items-center justify-center p-4 font-sans text-slate-800 selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Main Container -->
+    <div
+        class="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] w-full max-w-4xl overflow-hidden flex flex-col border border-slate-100 h-[750px]">
+
+        <!-- Header & Progress Bar -->
+        <header class="pt-8 px-8 pb-4">
+            <h1 class="text-2xl font-extrabold text-slate-900 text-center mb-6 tracking-tight">The scikit-learn ML
+                Pipeline</h1>
+
+            <!-- Dynamic Progress Bar -->
+            <div class="relative w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                <div id="progress-fill"
+                    class="absolute top-0 left-0 h-full bg-blue-500 transition-all duration-500 ease-out rounded-full"
+                    style="width: 16.66%;"></div>
+            </div>
+
+            <!-- Step Indicators -->
+            <div id="progress-labels" class="flex justify-between mt-3 text-xs font-semibold text-slate-400">
+                <!-- Injected via JS -->
+            </div>
+        </header>
+
+        <!-- Dynamic Content Area -->
+        <main class="flex-1 px-8 py-6 flex flex-col justify-center overflow-y-auto">
+            <div id="step-content" class="fade-in max-w-2xl mx-auto w-full">
+
+                <!-- Icon container -->
+                <div id="step-icon"
+                    class="w-16 h-16 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 mx-auto shadow-sm border border-blue-100">
+                    <!-- SVG injected here -->
+                </div>
+
+                <!-- Text Content -->
+                <div class="text-center mb-8">
+                    <h2 id="step-title" class="text-2xl font-bold text-slate-800 mb-3">Loading Data</h2>
+                    <p id="step-desc" class="text-slate-500 leading-relaxed">
+                        Every machine learning project starts with data. In scikit-learn, we can load built-in datasets
+                        or import our own from CSV files.
+                    </p>
+                </div>
+
+                <!-- Code Snippet -->
+                <div class="bg-slate-900 rounded-xl p-5 shadow-inner border border-slate-800">
+                    <div class="flex items-center gap-2 mb-3 px-1">
+                        <div class="w-3 h-3 rounded-full bg-rose-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                        <span class="text-slate-400 text-xs ml-2 font-mono">python</span>
+                    </div>
+                    <pre
+                        class="m-0 p-0"><code id="step-code" class="text-sm font-mono text-blue-300 leading-relaxed block overflow-x-auto whitespace-pre-wrap"></code></pre>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Footer Controls -->
+        <footer class="p-6 bg-white border-t border-slate-50 flex justify-between items-center rounded-b-3xl">
+            <button id="btn-prev"
+                class="px-6 py-2.5 rounded-lg font-semibold text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-colors disabled:opacity-30 disabled:cursor-not-allowed">
+                &larr; Back
+            </button>
+            <span id="step-counter" class="text-sm font-medium text-slate-400">Step 1 of 6</span>
+            <button id="btn-next"
+                class="px-6 py-2.5 rounded-lg font-semibold bg-blue-600 text-white hover:bg-blue-700 shadow-sm shadow-blue-200 transition-all active:scale-95 disabled:opacity-50">
+                Next Step &rarr;
+            </button>
+        </footer>
+
+    </div>
+
+    <script src="../js/ml_fundamental.js"></script>
+</body>
+
+</html>

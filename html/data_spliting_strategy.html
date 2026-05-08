@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Data Splitting Strategies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Simple fade-in animation for step transitions */
+        .fade-in {
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4 font-sans text-gray-800">
+
+    <div class="bg-white rounded-2xl shadow-xl w-full max-w-4xl p-6 md:p-10 border border-gray-100">
+
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <h1 class="text-3xl font-extrabold text-gray-900 mb-2">Data Splitting Strategies</h1>
+            <p class="text-gray-500">A step-by-step visual guide to fundamental ML dataset preparation</p>
+        </div>
+
+        <!-- Legend -->
+        <div class="flex flex-wrap justify-center gap-4 mb-8 text-sm font-medium">
+            <div class="flex items-center gap-2">
+                <div class="w-4 h-4 rounded bg-gray-200 border border-gray-300"></div> Full Data
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-4 h-4 rounded bg-blue-500"></div> Training Data
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-4 h-4 rounded bg-orange-400"></div> Validation Data
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-4 h-4 rounded bg-green-500"></div> Testing Data
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="min-h-[300px] flex flex-col justify-between">
+
+            <!-- Visualization Canvas -->
+            <div id="visualization-canvas"
+                class="w-full bg-gray-50 rounded-xl p-6 mb-8 border border-gray-100 flex items-center justify-center min-h-[200px] fade-in">
+                <!-- Dynamic content injected here -->
+            </div>
+
+            <!-- Text Explanation -->
+            <div id="text-content" class="fade-in mb-8 h-24">
+                <h2 id="step-title" class="text-xl font-bold text-gray-800 mb-2">1. The Full Dataset</h2>
+                <p id="step-description" class="text-gray-600 leading-relaxed">
+                    Before training a Machine Learning model, we start with a complete dataset containing all our
+                    historical examples and target labels.
+                </p>
+            </div>
+
+            <!-- Controls -->
+            <div class="flex items-center justify-between mt-auto pt-6 border-t border-gray-100">
+                <button id="btn-prev"
+                    class="px-6 py-2.5 rounded-lg font-semibold text-gray-600 bg-gray-100 hover:bg-gray-200 disabled:opacity-40 disabled:cursor-not-allowed transition-colors">
+                    &larr; Previous
+                </button>
+
+                <div class="flex gap-2" id="step-indicators">
+                    <!-- Dots injected via JS -->
+                </div>
+
+                <button id="btn-next"
+                    class="px-6 py-2.5 rounded-lg font-semibold text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors">
+                    Next Step &rarr;
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/data_spliting_strategy.js"></script>
+</body>
+
+</html>
