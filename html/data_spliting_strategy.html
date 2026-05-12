@@ -23,6 +23,21 @@
                 transform: translateY(0);
             }
         }
+
+        /* Custom scrollbar for code blocks */
+        pre::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        pre::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+
+        pre::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
     </style>
 </head>
 
@@ -31,13 +46,14 @@
     <div class="bg-white rounded-2xl shadow-xl w-full max-w-4xl p-6 md:p-10 border border-gray-100">
 
         <!-- Header -->
-        <div class="text-center mb-10">
+        <div class="text-center mb-8">
             <h1 class="text-3xl font-extrabold text-gray-900 mb-2">Data Splitting Strategies</h1>
-            <p class="text-gray-500">A step-by-step visual guide to fundamental ML dataset preparation</p>
+            <p class="text-gray-500">A step-by-step visual guide to fundamental ML dataset preparation with scikit-learn
+            </p>
         </div>
 
         <!-- Legend -->
-        <div class="flex flex-wrap justify-center gap-4 mb-8 text-sm font-medium">
+        <div class="flex flex-wrap justify-center gap-4 mb-6 text-sm font-medium">
             <div class="flex items-center gap-2">
                 <div class="w-4 h-4 rounded bg-gray-200 border border-gray-300"></div> Full Data
             </div>
@@ -53,16 +69,16 @@
         </div>
 
         <!-- Main Content Area -->
-        <div class="min-h-[300px] flex flex-col justify-between">
+        <div class="flex flex-col justify-between">
 
-            <!-- Visualization Canvas -->
+            <!-- Visualization & Code Canvas -->
             <div id="visualization-canvas"
-                class="w-full bg-gray-50 rounded-xl p-6 mb-8 border border-gray-100 flex items-center justify-center min-h-[200px] fade-in">
-                <!-- Dynamic content injected here -->
+                class="w-full bg-gray-50 rounded-xl p-6 mb-6 border border-gray-100 flex flex-col items-center justify-center min-h-[260px] fade-in gap-6">
+                <!-- Dynamic visual and code injected here -->
             </div>
 
             <!-- Text Explanation -->
-            <div id="text-content" class="fade-in mb-8 h-24">
+            <div id="text-content" class="fade-in mb-8 h-auto min-h-[100px]">
                 <h2 id="step-title" class="text-xl font-bold text-gray-800 mb-2">1. The Full Dataset</h2>
                 <p id="step-description" class="text-gray-600 leading-relaxed">
                     Before training a Machine Learning model, we start with a complete dataset containing all our
